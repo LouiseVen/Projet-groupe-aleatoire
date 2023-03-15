@@ -27,7 +27,7 @@ $randGroupe= array_rand($students , $smallGroupes);
 print_r( $randGroupe);
 */
 
-$randGroupe= array_rand($students , $smallGroupes);
-echo $students[$randGroupe[0]]." ".$students[$randGroupe[1]]." ".$students[$randGroupe[2]]." ".$students[$randGroupe[3]];
-
-
+for($i=0; $i<=$nombreDeTableauxACreer;$i++){
+    $randGroupe= array_rand($students , $smallGroupes);
+    echo $students[$randGroupe[0]]." ".$students[$randGroupe[1]]." ".$students[$randGroupe[2]]." ".$students[$randGroupe[3]] .'<br>' ;
+};
