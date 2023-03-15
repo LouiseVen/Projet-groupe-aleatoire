@@ -17,17 +17,19 @@ $students = [
 
 $tailleMax = count($students);
  
-//ici on recup la taille des groupes demandés -type integer
+//ici on recup le nbr de personnes par groupe -type integer
 $smallGroupes = 4;
 
-$nombreDeTableauxACreer = $tailleMax/$smallGroupes;
+$nombreDeGroupeACreer = $tailleMax/$smallGroupes;
 //ok donnee recup echo $nombreDeTableauxACreer;
 /* genere un tableau avec les cles    
 $randGroupe= array_rand($students , $smallGroupes);
 print_r( $randGroupe);
 */
 
-for($i=0; $i<=$nombreDeTableauxACreer;$i++){
+for($i=0; $i<$nombreDeGroupeACreer;$i++){
     $randGroupe= array_rand($students , $smallGroupes);
     echo $students[$randGroupe[0]]." ".$students[$randGroupe[1]]." ".$students[$randGroupe[2]]." ".$students[$randGroupe[3]] .'<br>' ;
+    //print_r( $randGroupe);
+    unset($students[$randGroupe[0]],$students[$randGroupe[1]],$students[$randGroupe[2]],$students[$randGroupe[3]]);
 };
