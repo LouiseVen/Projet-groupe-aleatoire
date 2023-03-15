@@ -6,9 +6,16 @@
     <link rel="stylesheet" href="style.css">
     <title>PeopleMix - Participant·e·s</title>
 
+
+</head>
+
+
+<body>
+    <?php include 'header.php'; ?>
+
     <!--Tentative d'ajout de <inputs> -->
     <script type='text/javascript'>
-        function addFields(){
+        function addFields() {
             // Generate a dynamic number of inputs
             var number = document.getElementById("nameStudent").value;
             // Get the element where the inputs will be added to
@@ -17,24 +24,19 @@
             while (container.hasChildNodes()) {
                 container.removeChild(container.lastChild);
             }
-            for (i=0;i<number;i++){
+            for (i = 0; i < number; i++) {
                 // Append a node with a random text
-                container.appendChild(document.createTextNode("Elève " + (i+1)));
+                container.appendChild(document.createTextNode("Elève " + (i + 1)));
                 // Create an <input> element, set its type and name attributes
                 var input = document.createElement("input");
                 input.type = "text";
-                input.name = "nameStudent" + i;
+                input.name = `students[${i}]`;
                 container.appendChild(input);
                 // Append a line break 
                 container.appendChild(document.createElement("br"));
             }
         }
     </script>
-</head>
-
-
-<body>
-    <?php include 'header.php'; ?>
 
     <main>
         <section class="introduction">
@@ -48,21 +50,21 @@
             <form method="post" action="resultats.php">
                 <h3>Participants</h3>
 
-                <!--Suite de la tentative*-->
-                <div>
+               <!--Partie modifiée-->
+                <div> 
                     <input type="text" id="nameStudent" name="NameStudent" value="">Nombre de participant·e·s : (max. 10)<br />
-                    <a href="#" id="filldetails" onclick="addFields()">Fill Details</a>
-                    <div id="container"/>
+                    <input type="button" class id="filldetails" value="Validez le nombre de participants" onclick="addFields()"></a>
+                    <div id="container">
                 </div>
                 <div>
-                    <button type="submit" name="submit">Envoyer</button>
+                    <button type="submit" name="submit">C'est parti ! </button>
                 </div>
-
+                <!--Fin-->
             </form>
         </section>
     </main>
 
-    <?php include 'footer.php';?>
+    <?php include 'footer.php'; ?>
 </body>
 
 </html>
