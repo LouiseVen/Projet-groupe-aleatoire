@@ -50,20 +50,16 @@
             <form method="post" action="resultats.php">
                 <h3>Participants</h3>
 
-                <!--Suite de la tentative*-->
-                <div>
-                    <input type="text" id="nameStudent" name="nameStudent" value="">Nombre de participant·e·s : (max. 10)<br />
-                    <a href="#" id="filldetails" onclick="addFields()">Fill Details</a>
-                    <div id="container" />
+               <!--Partie modifiée-->
+                <div> 
+                    <input type="text" id="nameStudent" name="NameStudent" value="">Nombre de participant·e·s : (max. 10)<br />
+                    <input type="button" class id="filldetails" value="Validez le nombre de participants" onclick="addFields()"></a>
+                    <div id="container">
                 </div>
                 <div>
-                    <label for="groupSize">Taille des groupes</label>
-                    <input type="text" id="groupSize" name="groupSize" required>
+                    <button type="submit" name="submit">C'est parti ! </button>
                 </div>
-                <div>
-                    <button type="submit" name="submit">Envoyer</button>
-                </div>
-
+                <!--Fin-->
             </form>
         </section>
     </main>
