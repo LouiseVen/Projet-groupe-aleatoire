@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="style.css">
     <title>PeopleMix - Participant·e·s</title>
 
-
 </head>
 
 
@@ -55,6 +54,10 @@
                     <input type="text" id="nameStudent" name="NameStudent" value="">Nombre de participant·e·s : (max. 10)<br />
                     <input type="button" class id="filldetails" value="Validez le nombre de participants" onclick="addFields()"></a>
                     <div id="container">
+                </div>
+                <div>
+                    <label for ='nombreGroupe'>Nombre de groupe</label>
+                    <input type="number" name="nombreGroupe" id="nombreGroupe">
                 </div>
                 <div>
                     <button type="submit" name="submit">C'est parti ! </button>

@@ -26,10 +26,12 @@ $nombreDeGroupeACreer = $tailleMax/$smallGroupes;
 $randGroupe= array_rand($students , $smallGroupes);
 print_r( $randGroupe);
 */
-
+$groupeCountNumber = 1;
 for($i=0; $i<$nombreDeGroupeACreer;$i++){
     $randGroupe= array_rand($students , $smallGroupes);
-    echo $students[$randGroupe[0]]." ".$students[$randGroupe[1]]." ".$students[$randGroupe[2]]." ".$students[$randGroupe[3]] .'<br>' ;
+    echo "Groupe"." ". $groupeCountNumber ++." "."composé de : <br>";
+    echo $students[$randGroupe[0]].", ".$students[$randGroupe[1]].", ".$students[$randGroupe[2]].", ".$students[$randGroupe[3]]."<br>" ;
     //print_r( $randGroupe);
     unset($students[$randGroupe[0]],$students[$randGroupe[1]],$students[$randGroupe[2]],$students[$randGroupe[3]]);
+    
 };
