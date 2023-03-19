@@ -10,7 +10,8 @@
 
 <body>
     <header>
-        <h1>PeopleMix</h1>
+        <h1></h1>
+        <img src="assets/logo.png" />
     </header>
 </body>
 
