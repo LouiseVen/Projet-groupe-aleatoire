@@ -38,11 +38,11 @@
     </script>
 
     <main>
-        <section class="introduction">
-            <h2>Création de participants</h2>
+        <div class="note note-success mb-3">
+            <h3>Création de participants</h3>
             <p>Bonjour <?php echo $_POST["name"]; ?>, et bienvenue sur notre outil de création de groupe ! <br></p>
             <p>Veuillez rentrer les participant·e·s.</p>
-        </section>
+    </div>
 
         <?php   
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -67,6 +67,7 @@
 }
 ?>
 
+        <div class="form">
         <!--Trouver comment multiplier le nombre d'input selon le nombre de participants-->
         <section class="formulaireParticipants">
             <form method="post" action="resultats.php" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
@@ -88,6 +89,7 @@
                 </div>
                 <!--Fin-->
             </form>
+        </div>
         </section>
     </main>
 

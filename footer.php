@@ -8,9 +8,13 @@
     <title>PeopleMix</title>
 </head>
 
-<footer>
-    <p>Dé'Terminées - 2023<br></p>
-    <p><a href="https://www.google.com">Nous contacter</a></p>
+<footer class="bg-dark text-center text-white">
+<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 - Dé'Terminées. All rights reserved. <br>
+    <a href="https://www.google.com">Nous contacter</a>
+    
+  </div>
+    
 </footer>
 
 </html>

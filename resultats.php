@@ -25,52 +25,15 @@
     ?>
 
     <main>
-        <h2>Résultats de groupe</h2>
+    <div class="note note-success mb-3">
+        <h3>Résultats de groupe</h3>
         <p>Voici les résultats de votre création de groupe :</p>
-        <p>Vous voulez créer <?php echo $nbGroupsToCreate ?>  groupe(s) !</p>
+    </div>
+        
+    <div id = "group-list">
+    <p>Vous voulez créer <?php echo $nbGroupsToCreate ?>  groupe(s) !</p>
 
-        <?php
-            $groupeCountNumber = 1;
-            
-            // Boucle principale de création des groupes
-            for ($i = 0; $i < $nbGroupsToCreate; $i++)
-            {
-                echo "Groupe" . " " . $groupeCountNumber++ . " " . "composé de : <br>";
-                // Récupération aléatoire de x clés depuis le tableau complet
-                $randGroupe = array_rand($allStudents, $nbStudentsToAffect);
-                
-                // On parse le tableau retourné
-                for( $j=0;$j<$nbStudentsToAffect;$j++)//$randGroupe as $key => $nameStudent)
-                {
-                    echo $allStudents[$randGroupe[$j]]. "<br>";
-                    unset($allStudents[$randGroupe[$j]]);
-                }; 
-                echo "<br>";  
-            }
-
-
-
-
-            //for ($i = 0; $i < $nbStudentsToAffect; $i++) {
-            //    $randGroupe = array_rand($allStudents, $nbStudentsMax);
-           
-            
-            //echo "Groupe" . " " . $groupeCountNumber++ . " " . "composé de : <br>";
-           // foreach( $randGroupe as $key=> $nameStudent){
-           //     echo $nameStudent. "<br>";
-           //     unset($randGroupe[$key]);
-            
-           // };
-
-/*
-            echo $students[$randGroupe[0]] . ", " . $students[$randGroupe[1]] . ", " . $students[$randGroupe[2]] . ", " . $students[$randGroupe[3]] . "<br>";
-            //print_r( $randGroupe);
-            unset($students[$randGroupe[0]], $students[$randGroupe[1]], $students[$randGroupe[2]], $students[$randGroupe[3]]);
-            */
-       // };
-
-
-        //var_dump($_POST); ?>
+    <?php include "randomGroups.php"; ?>   
 <!--
         <article>
             <h3>Groupe A</h3>
@@ -80,6 +43,8 @@
             <h3>Groupe B</h3>
         </article>
     -->
+
+    </div>
         <p>Si vous le souhaitez, vous pouvez recommencer une création de groupe, sous une nouvelle identité ou recommencer une nouvelle création de groupe sous la même identité.</p>
 
 
