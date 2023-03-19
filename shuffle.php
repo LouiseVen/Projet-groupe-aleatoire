@@ -1,16 +1,11 @@
 <?php
 
-$studentCount = 14; // input 2 : student count afin de générer le form php avec le bon nombre d'inputs
-// Attention : il faudra veiller à créer des inputs comportant des id et des attributs Name uniques pour éviter qu'ils soient écrasés.
+$studentCount = $_POST["nombreParticipants"];
+$groupCount = $_POST["nombreGroupe"];
 
-$students = ['Student1', 'Student2', 'Student3', 'Student4', 'Student5', 'Student6', 'Student7', 'Student8', 'Student9','Student10',
-    'Student11', 'Student12', 'Student13', 'student14']; // input 3 : student names in array -> limité à 25 entrées par exemple.
+$students = $_POST["students"]; // input 3 : student names in array -> limité à 25 entrées par exemple.
 
 shuffle($students); // Shuffle les participants en amont ;)
-
-// echo $studentCount = count($students); student count possible ici plutôt non ? Why need to be asked before ? -> Because JS vs PHP :)
-
-$groupCount = 4; // input 4 : nombre de groupes voulus par l'utilisateur (nombre de tableaux à créer -> $i)
 
 // Répartition : 
 
@@ -27,7 +22,7 @@ $finalGroups = []; // pour afficher les groupes créés dans des array
             array_shift($students); // supprime le premier élements du tableau d'origine
             }
         } 
-        print_r($finalGroups);
+        
     }
     elseif ($lonelyStudent !== 0) { // si le nombre d'étudiants n'est pas répartissable de façon strictement équitablement
         for ($i=0; $i<$groupCount; $i++) {
@@ -40,5 +35,13 @@ $finalGroups = []; // pour afficher les groupes créés dans des array
             array_push($finalGroups[$i], $students[0]); // déplace les étudiants restants du tableau principal aux tableaux secondaires
             array_shift($students); // supprime le premier élements du tableau d'origine
             }
-        print_r($finalGroups);
+        
+    }
+
+    //Affichage des participants
+    foreach ( $finalGroups as $groupe => $student) {
+        echo "Dans le groupe " . $groupe + 1 . "<br>" ;
+        foreach ( $student as $studentName) {
+            echo $studentName . "<br>";
+            }
     }

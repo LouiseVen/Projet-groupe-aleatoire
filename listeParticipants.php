@@ -16,7 +16,7 @@
     <script type='text/javascript'>
         function addFields() {
             // Generate a dynamic number of inputs
-            var number = document.getElementById("nameStudent").value;
+            var number = document.getElementById("nombreParticipants").value;
             // Get the element where the inputs will be added to
             var container = document.getElementById("container");
             // Remove every children it had before
@@ -52,7 +52,7 @@
 	// declare name and email variables
 	$name = $group = '';
 
-	if (empty($_POST['nameStudent'])) {
+	if (empty($_POST['nombreParticipants'])) {
 		$nameError = 'Merci de remplir ce champs';
 	} else {
 		$name = trim(htmlspecialchars($_POST['name']));
@@ -75,7 +75,7 @@
 
                <!--Partie modifiée-->
                 <div> 
-                    <input type="text" id="nameStudent" name="nameStudent" value="" required>Nombre de participant·e·s : (max. 10)<br />
+                    <input type="text" id="nombreParticipants" name="nombreParticipants" value="" required>Nombre de participant·e·s : (max. 10)<br />
                     <span class="error"><?php if (isset ($nameError)) echo $nameError?></span>
                     <input type="button" class id="filldetails" value="Validez le nombre de participants" onclick="addFields()"></a>
                     <div id="container">

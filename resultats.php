@@ -33,7 +33,7 @@
     <div id = "group-list">
     <p>Vous voulez créer <?php echo $nbGroupsToCreate ?>  groupe(s) !</p>
 
-    <?php include "randomGroups.php"; ?>   
+    <?php include "shuffle.php"; ?>   
 <!--
         <article>
             <h3>Groupe A</h3>
