@@ -86,8 +86,16 @@
                     <input type="number" name="nombreGroupe" id="nombreGroupe" required>
                 </div>
                 <div>
+                    <label for="filtre">Filtre</label>
+                    <select name="filtre" id="filtre" required>
+                        <option value="hasardPur">Hasard complet</option>
+                        <option value="joker">Joker</option>
+                    </select>
+                </div>
+                <div>
                     <button type="submit" name="submit">C'est parti ! </button>
                 </div>
+                
                 <!--Fin-->
             </form>
         </div>

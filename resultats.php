@@ -33,7 +33,13 @@
     <div id = "group-list">
     <p>Vous voulez créer <?php echo $nbGroupsToCreate ?>  groupe(s) !</p>
 
-    <?php include "shuffle.php"; ?>   
+    <?php
+    if ($_POST("filtre") == "hasardPur"){
+        include "shuffle.php";
+        echo "shuffle.php";
+    }
+
+      ?>   
 <!--
         <article>
             <h3>Groupe A</h3>
