@@ -23,8 +23,7 @@
 
 <body>
 
-    <?php include("header.php");
-    session_start(); ?>
+    <?php include("header.php") ?>
     <main>
         <div class="about">
             
@@ -35,7 +34,7 @@
 
         <div class="form">
             <h3>Commencez à créer vos groupes dès maintenant !</h3>
-            <form method="post" action="listeParticipants.php" id="utilisateur">
+            <form method="post" action="ChoixduFiltre.php" id="utilisateur">
                 <div class="container">
                     <label for="name" type="text">Nom</label>
                     <input name="name" type="text" required>
