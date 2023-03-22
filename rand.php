@@ -1,37 +1,63 @@
 <?php
 // taille du groupe définitif à récup
 $students = [
-    1=>'Marina',
-    2=>'Coline',
-    3=>'Angeline',
-    4=>'Louise',
-    5=>'Sarah',
-    6=>'Carole',
-    7=>'student7', 
-    8=>'student8',
-    9=>'student9',
-    10=>'student10',
-    11=>'student11',
-    12=>'student12', 
+    'Lilou' => 5,
+    'Mimosa' => 5,
+    'Pouet' => 4,
+    'Manon' => 3,
+    'Marina' => 2,
+    'Louise' => 2,
+    'Emma' => 2,
+    'Coline' => 1,
+    'Angeline' => 1,
+    'Sarah' => 1,
+    'Carole' => 1,
+    'Oceane' => 1,
 ];
+$studentTotal= 12; //$_POST["nombreParticipants"];
+$groupCount = 3; //$_POST["nombreGroupe"];
+$studentPerGroup = 3;
 
-$tailleMax = count($students);
- 
-//ici on recup le nbr de personnes par groupe -type integer
-$smallGroupes = 4;
+function levelRandom($studentTotal, $groupCount, $studentPerGroup, $students)
+{
+    $finalGroups = []; // pour afficher les groupes créés dans des array
+    $NbTotal = 0;
+    arsort($students);
 
-$nombreDeGroupeACreer = $tailleMax/$smallGroupes;
-//ok donnee recup echo $nombreDeTableauxACreer;
-/* genere un tableau avec les cles    
-$randGroupe= array_rand($students , $smallGroupes);
-print_r( $randGroupe);
-*/
-$groupeCountNumber = 1;
-for($i=0; $i<$nombreDeGroupeACreer;$i++){
-    $randGroupe= array_rand($students , $smallGroupes);
-    echo "Groupe"." ". $groupeCountNumber ++." "."composé de : <br>";
-    echo $students[$randGroupe[0]].", ".$students[$randGroupe[1]].", ".$students[$randGroupe[2]].", ".$students[$randGroupe[3]]."<br>" ;
-    //print_r( $randGroupe);
-    unset($students[$randGroupe[0]],$students[$randGroupe[1]],$students[$randGroupe[2]],$students[$randGroupe[3]]);
-    
-};
+    // Répartition : 
+    $arrayKey = array_keys($students);
+    for ($i = 0; $i < $groupCount; $i++) {
+        //boucle principale de creation des groupes
+        $NbAffect = 0;
+        
+
+        // boucle qui affecte les etudiants par groupes
+        for ($j = 0; $j < $studentPerGroup; $j++) {
+            // $finalGroups[$i][$j] = $arrayKey[$NbAffect];//$i.$j;
+            $finalGroups[$i][$j] = $arrayKey[$i + ($NbAffect * $groupCount)];
+            echo 'i = ' . $i . '    -    NbAffect = ' . $NbAffect . '    -    groupCount = ' . $groupCount . PHP_EOL;
+            $NbAffect++;
+            $NbTotal++;
+        }
+    }
+
+    //Sil reste des etudiants non affectés
+    if ($studentTotal != $NbTotal) {
+        $deltaStudent = $studentTotal - $NbTotal;
+        
+        echo $studentTotal. PHP_EOL;
+        echo $NbTotal. PHP_EOL;
+        
+        echo $deltaStudent. PHP_EOL;
+
+
+        for ($i = 0; $i < $deltaStudent; $i++) {
+            $finalGroups[$i][$groupCount+1] = $arrayKey[$studentTotal-($i+1)];
+        }
+    }
+
+
+    print_r($finalGroups);
+}
+
+levelRandom(12, 3, 3, $students);

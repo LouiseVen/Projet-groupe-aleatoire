@@ -34,10 +34,10 @@
     <p>Vous voulez créer <?php echo $nbGroupsToCreate ?>  groupe(s) !</p>
 
     <?php
-    if ($_POST("filtre") == "hasardPur"){
+    //if ($_POST("filtre") == "hasardPur"){
         include "shuffle.php";
-        echo "shuffle.php";
-    }
+        echo pureRandom($_POST['nombreParticipants'],$_POST['nombreGroupe'],$_POST['students']);
+    //}
 
       ?>   
 <!--

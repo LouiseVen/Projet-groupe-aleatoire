@@ -90,6 +90,7 @@
                     <select name="filtre" id="filtre" required>
                         <option value="hasardPur">Hasard complet</option>
                         <option value="joker">Joker</option>
+                        <option value="level">Compétences</option>
                     </select>
                 </div>
                 <div>
