@@ -11,11 +11,7 @@
 
 <body>
     <?php include 'header.php';
-    include 'addFields.html';
-    session_start(); 
-    $name = $_SESSION['name'] = $_POST['name'];
-    $email = $_SESSION['email'] = $_POST['email'];
-    ?>
+    include 'addFields.html'; ?>
 
     <!--Tentative d'ajout de <inputs> -->
 
@@ -23,7 +19,7 @@
     <main>
         <div class="note note-success mb-3">
             <h3>Création de participants</h3>
-            <p>Bonjour <?php echo $name; ?>, et bienvenue sur notre outil de création de groupe ! <br></p>
+            <p>Bonjour <?php echo $_POST["name"]; ?>, et bienvenue sur notre outil de création de groupe ! <br></p>
             <p>Veuillez rentrer les participant·e·s.</p>
         </div>
 
@@ -52,8 +48,13 @@
         <div class="form">
             <!--Trouver comment multiplier le nombre d'input selon le nombre de participants-->
             <section class="formulaireParticipants">
-                
-                    <form method="post" action="redirections.php" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                <?php
+                if (isset($_POST['submit'])) {
+                    header('Location: redirections.php');
+                    exit;
+                } else {
+                ?>
+                    <form method="post" action="resultatsRandom.php" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                         <h3>Participants</h3>
 
                         <!--Partie modifiée-->
@@ -67,10 +68,6 @@
                                 <label for='nombreGroupe'>Nombre de groupe</label>
                                 <input type="number" name="nombreGroupe" id="nombreGroupe" required>
                             </div>
-                            <select name="selectbox">
-                                <option name="option2">Hasard complet</option>
-                                <option name="option1">Joker</option>
-                            </select>
                             
                             <div>
                                 <button type="submit" name="submit" id="submit">C'est parti ! </button>
@@ -80,7 +77,7 @@
                     </form>
 
                 <?php
-                
+                }
                 ?>
 
         </div>

@@ -1,5 +1,7 @@
 <?php
 
+include 'datas.php';
+var_dump($_POST['nombreParticipants']);
 
 
 // $studentCount = 7;
@@ -68,9 +70,9 @@ function generateGroupsJoker($studentCount, $groupCount, $students, $excludedStu
 
     //Affichage des participants
     foreach ($finalGroups as $groupe => $student) {
-        echo "Dans le groupe " . $groupe + 1 . "<br>";
+        echo "Dans le groupe " . $groupe + 1 . "\n";
         foreach ($student as $studentName) {
-            echo $studentName . "<br>";
+            echo $studentName . "\n";
         }
     }
 }

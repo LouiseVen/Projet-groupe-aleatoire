@@ -8,21 +8,19 @@
 </head>
 
 <body>
-    <?php include 'header.php'; 
-    
+    <?php include 'header.php'; ?>
 
+    <?php
     session_start();
-    // $excludedStudent = $_SESSION['excludedStudent'] = $_POST['excludedStudent'];
-
         // Tableau des étudiants saisis dans le formulaire utilisateur
         
         // Nombre d'édutiants saisi par le formulaire utilisateur
-        $nbStudentsMax = count($_SESSION['students']);
+        $nbStudentsMax = count($students);
         
         // ici on recup le nombre de groupes demandés -type integer
 
         // Calcul du nombre d'étudiants à affecter à chaque groupe
-        $nbStudentsToAffect = $nbStudentsMax / $_SESSION['nombreGroupe'];
+        $nbStudentsToAffect = $nbStudentsMax / $nbGroupsToCreate;
     ?>
 
     <main>
@@ -32,22 +30,20 @@
     </div>
         
     <div id = "group-list">
-    <p>Vous voulez créer <?php echo $_SESSION['nombreGroupe'] ?>  groupe(s) !</p>
+    <p>Vous voulez créer <?php echo $nbGroupsToCreate ?>  groupe(s) !</p>
 
     <?php
-    switch ($_SESSION['selectbox']){
-        case 'Hasard complet':
+    // if (isset($_POST["filtre"])){
+    //     if ($_POST["filtre"] == "hasardPur"){
             include "shuffle.php";
-            echo "bonjour";
-            echo pureRandom($_SESSION['nombreParticipants'], $_SESSION['nombreGroupe'], $_SESSION['students']);
-            break;
-        case 'Joker':
-            include "jokerFilter.php";
-            $_SESSION['excludedStudent'] = $_POST['excludedStudent'];
-             echo generateGroupsJoker($_SESSION["nombreParticipants"], $_SESSION["nombreGroupe"], $_SESSION["students"], $_SESSION["excludedStudent"]);
-             break;
-    }
-            
+            echo pureRandom($_POST["nombreParticipants"], $_POST["nombreGroupe"], $_POST["students"]);
+        // }
+        // if ($_POST["filtre"] == "joker"){
+        //     include "jokerFilter.php";
+        //     echo generateGroupsJoker($_POST["nombreParticipants"], $_POST["nombreGroupe"], $_POST["students"], $_POST["excludedStudents"]);
+        // };
+    // }
+    
 
       ?>   
 <!--

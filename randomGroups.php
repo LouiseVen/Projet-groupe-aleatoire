@@ -1,6 +1,6 @@
 <?php
 
-
+include 'datas.php';
             $groupeCountNumber = 1;
             
             // Boucle principale de création des groupes

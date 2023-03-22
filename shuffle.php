@@ -1,12 +1,16 @@
 <?php
 
-$studentCount = $_POST["nombreParticipants"];
-$groupCount = $_POST["nombreGroupe"];
+// $studentCount = $_POST["nombreParticipants"];
+// $groupCount = $_POST["nombreGroupe"];
 
-$students = $_POST["students"];
+// $students = $_POST["students"];
+// $studentCount = 6;
+// $groupCount = 2;
+// $students = ['A', 'B', 'C', 'D', 'E', 'F'];
 
 function pureRandom($studentCount, $groupCount, $students)
 {
+    echo "Coucou";
     shuffle($students); // Shuffle les participants en amont ;)
 
     // Répartition : 
@@ -46,3 +50,4 @@ function pureRandom($studentCount, $groupCount, $students)
     }
 }
  // input 3 : student names in array -> limité à 25 entrées par exemple.
+// echo pureRandom(6,2,['A','B','C','D','E','F']);
