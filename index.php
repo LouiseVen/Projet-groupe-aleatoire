@@ -25,14 +25,14 @@
 
     <?php include("header.php") ?>
     <main>
-        <div class="about">
+        <div class="about" style="background-color: rgba(182, 255, 245, 0.4)";>
             
-        <div class="note note-info mb-3">
+        <div class="note note-primary mb-3">
             <strong>A propos :</strong> Grâce à notre créateur de groupe aléatoire, vous pourrez rapidement et facilement faire des groupes entre vos étudiant·e·s, 
                 et même choisir des filtres selon vos choix !
         </div>
 
-        <div class="form">
+        <div class="form" style="background-color: rgba(21, 0, 116, 0.7)";>
             <h3>Commencez à créer vos groupes dès maintenant !</h3>
             <form method="post" action="listeParticipants.php" id="utilisateur">
                 <div class="container">
@@ -51,7 +51,7 @@
                     <i></i>
                 </div>
                 <div>
-                    <button type="submit">Envoyer</button>
+                    <button type="submit" style="background-color: rgba(135,255, 135, 0.3)";>Envoyer</button>
                 </div>
 
                 </div>

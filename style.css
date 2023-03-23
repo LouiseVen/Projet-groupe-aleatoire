@@ -88,7 +88,8 @@ body {
     line-height: var(--mdb-body-line-height);
     color: var(--mdb-body-color);
     text-align: var(--mdb-body-text-align);
-    background-color: var(--mdb-body-bg);
+    /*background-color: var(--mdb-body-bg);*/
+    background-color: greenyellow;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 }
@@ -2351,6 +2352,7 @@ textarea.form-control-lg {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.6;
+    /*color: #4f4f4f;*/
     color: #4f4f4f;
     background-color: #fff;
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%234f4f4f' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
@@ -2460,7 +2462,7 @@ textarea.form-control-lg {
 }
 
 .form-check-input:checked {
-    background-color: #3b71ca
+    background-color: #3b71ca;
 }
 
 .form-check-input:checked[type=checkbox] {
@@ -13759,6 +13761,7 @@ a {
 }
 
 .note-primary {
+    text-align:center;
     background-color: #dfe7f6;
     border-color: #376fc8
 }

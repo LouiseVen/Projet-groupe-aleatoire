@@ -16,8 +16,8 @@
   <div
     class="p-5 text-center bg-image"
     style="
-      background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp');
-      height: 400px;
+      background-image: url('Images/mixPeople.jpg');
+      height: 300px;
     "
   >
     <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
@@ -31,6 +31,3 @@
   </div>
   <!-- Background image -->
 </header>
-</body>
-
-</html>
