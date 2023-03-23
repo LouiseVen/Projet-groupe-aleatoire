@@ -22,17 +22,30 @@
 </head>
 
 <body>
-
+    <main class="box">
     <?php include("header.php");
     session_start(); ?>
-    <main>
+        
         <div class="about">
             
         <div class="note note-info mb-3">
             <strong>A propos :</strong> Grâce à notre créateur de groupe aléatoire, vous pourrez rapidement et facilement faire des groupes entre vos étudiant·e·s, 
                 et même choisir des filtres selon vos choix !
         </div>
+        <section class="loader">
 
+<div class="slider" style="--i:0">
+</div>
+<div class="slider" style="--i:1">
+</div>
+<div class="slider" style="--i:2">
+</div>
+<div class="slider" style="--i:3">
+</div>
+<div class="slider" style="--i:4">
+</div>
+</section>
+  </div>
         <div class="form">
             <h3>Commencez à créer vos groupes dès maintenant !</h3>
             <form method="post" action="listeParticipants.php" id="utilisateur">
@@ -57,7 +70,7 @@
 
                 </div>
             </form>
-        </div>
+        
     </main>
     <?php include("footer.php") ?>
 </body>

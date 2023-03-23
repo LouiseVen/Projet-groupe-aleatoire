@@ -1,16 +1,15 @@
 <?php
+$studentCount = $_SESSION["nombreParticipants"] = $_GET['nombreParticipants'];
+$groupCount = $_SESSION["nombreGroupe"] = $_POST["nombreGroupe"];
 
-// $studentCount = $_POST["nombreParticipants"];
-// $groupCount = $_POST["nombreGroupe"];
+$students = $_SESSION['students'] = $_POST["students"];
 
-// $students = $_POST["students"];
 // $studentCount = 6;
 // $groupCount = 2;
 // $students = ['A', 'B', 'C', 'D', 'E', 'F'];
-
+var_dump($_SESSION["students"]);
 function pureRandom($studentCount, $groupCount, $students)
 {
-    echo "Coucou";
     shuffle($students); // Shuffle les participants en amont ;)
 
     // Répartition : 

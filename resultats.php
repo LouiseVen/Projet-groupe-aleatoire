@@ -10,19 +10,31 @@
 <body>
     <?php include 'header.php'; 
     
+    // THE SIGNATURE OF THE GROUP
+    // DO NOT ERASE
 
+    // for ($i=0; $i<10; $i++){
+    //     echo "CAPYBARA";
+    //     $i--;
+    // }
+                                            
     session_start();
     // $excludedStudent = $_SESSION['excludedStudent'] = $_POST['excludedStudent'];
 
         // Tableau des étudiants saisis dans le formulaire utilisateur
+        $studentCount = $_SESSION["nombreParticipants"];
+        $groupCount = $_SESSION["nombreGroupe"] = $_POST["nombreGroupe"];
         
+        $students = $_POST["students"];
         // Nombre d'édutiants saisi par le formulaire utilisateur
-        $nbStudentsMax = count($_SESSION['students']);
+        $nbStudentsMax = $_SESSION['nombreParticipants'];
         
         // ici on recup le nombre de groupes demandés -type integer
 
         // Calcul du nombre d'étudiants à affecter à chaque groupe
         $nbStudentsToAffect = $nbStudentsMax / $_SESSION['nombreGroupe'];
+    
+    
     ?>
 
     <main>
@@ -36,16 +48,19 @@
 
     <?php
     switch ($_SESSION['selectbox']){
-        case 'Hasard complet':
+        case 'pureRandom':
             include "shuffle.php";
             echo "bonjour";
             echo pureRandom($_SESSION['nombreParticipants'], $_SESSION['nombreGroupe'], $_SESSION['students']);
             break;
-        case 'Joker':
+        case 'joker':
             include "jokerFilter.php";
             $_SESSION['excludedStudent'] = $_POST['excludedStudent'];
              echo generateGroupsJoker($_SESSION["nombreParticipants"], $_SESSION["nombreGroupe"], $_SESSION["students"], $_SESSION["excludedStudent"]);
              break;
+        case 'pondere':
+            include "pondere.php";
+            echo levelRandom($_SESSION['nombreParticipants'], $_SESSION['nombreGroupe'], $_SESSION['students']);
     }
             
 

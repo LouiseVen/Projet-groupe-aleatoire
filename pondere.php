@@ -1,35 +1,35 @@
 <?php
 // taille du groupe définitif à récup
-$students = [
-    'Lilou' => 5,
-    'Mimosa' => 5,
-    'Pouet' => 4,
-    'Manon' => 3,
-    'Marina' => 2,
-    'Louise' => 2,
-    'Emma' => 2,
-    'Coline' => 1,
-    'Angeline' => 1,
-    'Sarah' => 1,
-    'Carole' => 1,
-    'Oceane' => 1,
-];
-$studentTotal= 12; //$_POST["nombreParticipants"];
-$groupCount = 3; //$_POST["nombreGroupe"];
-$studentPerGroup = 3;
+// $students = [
+//     'Lilou' => 5,
+//     'Mimosa' => 5,
+//     'Pouet' => 4,
+//     'Manon' => 3,
+//     'Marina' => 2,
+//     'Louise' => 2,
+//     'Emma' => 2,
+//     'Coline' => 1,
+//     'Angeline' => 1,
+//     'Sarah' => 1,
+//     'Carole' => 1,
+//     'Oceane' => 1,
+// ];
 
-function levelRandom($studentTotal, $groupCount, $studentPerGroup, $students)
+
+function levelRandom($studentTotal, $groupCount, $students)
 {
+    
+    $studentPerGroup = floor($studentTotal / $groupCount);
     $finalGroups = []; // pour afficher les groupes créés dans des array
     $NbTotal = 0;
     arsort($students);
 
-    // Répartition : 
+    // Répartition :
     $arrayKey = array_keys($students);
     for ($i = 0; $i < $groupCount; $i++) {
         //boucle principale de creation des groupes
         $NbAffect = 0;
-        
+
 
         // boucle qui affecte les etudiants par groupes
         for ($j = 0; $j < $studentPerGroup; $j++) {
@@ -44,11 +44,11 @@ function levelRandom($studentTotal, $groupCount, $studentPerGroup, $students)
     //Sil reste des etudiants non affectés
     if ($studentTotal != $NbTotal) {
         $deltaStudent = $studentTotal - $NbTotal;
-        
-        echo $studentTotal. PHP_EOL;
-        echo $NbTotal. PHP_EOL;
-        
-        echo $deltaStudent. PHP_EOL;
+
+        // echo $studentTotal. PHP_EOL;
+        // echo $NbTotal. PHP_EOL;
+
+        // echo $deltaStudent. PHP_EOL;
 
 
         for ($i = 0; $i < $deltaStudent; $i++) {
@@ -57,7 +57,7 @@ function levelRandom($studentTotal, $groupCount, $studentPerGroup, $students)
     }
 
 
-    print_r($finalGroups);
+    // print_r($finalGroups);
 }
 
-levelRandom(12, 3, 3, $students);
+// levelRandom(12, 3, 3, $students);

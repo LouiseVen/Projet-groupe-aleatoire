@@ -46,7 +46,7 @@
         }
         ?>
 
-        <form method="get" action="listeParticipants.php">
+        <form method="get" action="listeParticipantsLevel.php">
             <?php
             if (empty($_GET['selectbox'])){
                 echo '<select name="selectbox">
@@ -55,7 +55,7 @@
                 <option value ="pondere">Pondéré</option>
             </select>
 
-            <input type="text" id="nombreParticipants" name="nombreParticipants" value="" required>Nombre de participant·e·s : <br />
+            <input type="text" id="nombreParticipants" name="nombreParticipants" value="" required>Nombre de participant·e·s : (max. 10)<br />
             <button type="submit">valider</button>';
             }
 
@@ -63,12 +63,8 @@
 
         </form>
 
-        <div class="form">
     <?php
     if (isset($_GET['selectbox'])) {
-        $_SESSION['nombreParticipants'] = $_GET['nombreParticipants'];
-        
-        
         switch ($_GET['selectbox']) {
             case 'pureRandom':
             case 'joker':
@@ -79,9 +75,32 @@
                 break;
         }
     } ?>
-    </div>
+            <div class="form">
+            <!--Trouver comment multiplier le nombre d'input selon le nombre de participants-->
+            <section class="formulaireParticipants">
+
+                    <form method="post" action="redirections.php" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                        <h3>Participants</h3>
+
+                        <!--Partie modifiée-->
+                        <div>
+                            <input type="text" id="nombreParticipants" name="nombreParticipants" value="" required>Nombre de participant·e·s : (max. 10)<br />
+                            <span class="error"><?php if (isset($nameError)) echo $nameError ?></span>
+                            <input type="button" class id="filldetails" value="Validez le nombre de participants" onclick="addFields()"></a>
+                            <div id="container">
+                            </div>
+                            <div>
+                                <label for='nombreGroupe'>Nombre de groupe</label>
+                                <input type="number" name="nombreGroupe" id="nombreGroupe" required>
+                            </div>
+
+
+                            <div>
+                                <button type="submit" name="submit" id="submit">C'est parti ! </button>
+                            </div>
 
                             <!--Fin-->
+                    </form>
 
                 <?php
 
